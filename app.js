@@ -1,5 +1,5 @@
 let listaDeNumerosSorteados = [];
-let numeroLimite = 10;
+let numeroLimite = 100;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -11,7 +11,7 @@ function modificarTexto (tag, texto) {
 
 function exibirMensagemInicial () {
     modificarTexto('h1', 'Jogo do número secreto');
-    modificarTexto('p', 'Digite um número entre 1 e 10');
+    modificarTexto('p',  `Digite um número entre 1 e ${numeroLimite}`);
 }
 
 exibirMensagemInicial();
@@ -26,8 +26,7 @@ function gerarNumeroAleatorio () {
     if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
         return gerarNumeroAleatorio();
     } else {
-        listaDeNumerosSorteados.push(numeroEscolhido);
-        console.log(listaDeNumerosSorteados)
+        listaDeNumerosSorteados.push(numeroEscolhido);        
         return numeroEscolhido;
     }
 }
